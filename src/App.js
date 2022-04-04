@@ -1,13 +1,17 @@
-import './App.css';
-import Hello from './component/Hello';
+import './App.css';   
+import TopSection from './component/topsection/TopSection';
+import Sidebars from './component/sidebar/Sidebar';
+// import Home from './pages/home/Home'; 
 
 
-function App() { 
+import React, { useState } from "react";
+
+function App() {
   return (
-    <div className="App"> 
-    <Hello />  
-    </div>
+    <>
+    <TopSection/>
+      <Sidebars/> 
+    </>
   );
 }
-
 export default App;
