@@ -1,17 +1,26 @@
-import './App.css';   
-import TopSection from './component/topsection/TopSection';
-import Sidebars from './component/sidebar/Sidebar';
-// import Home from './pages/home/Home'; 
+import './App.css';
+import Sidebar from './components/Sidebar';
+import { BrowserRouter as Router, Routes, Route }from 'react-router-dom';
+import Overview from './pages/Overview';
+import { Reports, ReportsOne, ReportsTwo, ReportsThree } from './pages/Reports';
+import Team from './pages/Team';   
 
-
-import React, { useState } from "react";
-
-function App() {
+function App() {    
   return (
-    <>
-    <TopSection/>
-      <Sidebars/> 
-    </>
+    <Router> 
+      <Sidebar />
+
+      <Routes>
+        <Route path='/overview' exact element={<Overview />} />
+        <Route path='/reports' exact element={<Reports/>} />
+        <Route path='/reports/reports1' exact element={<ReportsOne/>} />
+        <Route path='/reports/reports2' exact element={<ReportsTwo/>} />
+        <Route path='/reports/reports3' exact element={<ReportsThree/>} />
+        <Route path='/team' exact element={<Team/>} />
+      </Routes>
+    </Router>
+        
   );
 }
+
 export default App;
